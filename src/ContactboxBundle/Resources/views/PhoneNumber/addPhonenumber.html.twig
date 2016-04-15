@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <p>Contact name: {{ contact.firstname }} {{ contact.lastname }}</p>
+
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}

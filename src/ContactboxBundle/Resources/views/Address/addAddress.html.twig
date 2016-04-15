@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+    <p>Address for: {{ contact.firstname }} {{ contact.lastname }}</p>
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.city) }}
+        {{ form_errors(form.city) }}
+        {{ form_widget(form.city) }}
+    </div>
+    <div>
+        {{ form_label(form.street) }}
+        {{ form_errors(form.street) }}
+        {{ form_widget(form.street) }}
+    </div>
+    <div>
+        {{ form_label(form.homeNumber) }}
+        {{ form_errors(form.homeNumber) }}
+        {{ form_widget(form.homeNumber) }}
+    </div>
+    <div>
+        {{ form_label(form.flatNumber) }}
+        {{ form_errors(form.flatNumber) }}
+        {{ form_widget(form.flatNumber) }}
+    </div>
+    <div>
+        {{ form_widget(form.save) }}
+    </div>
+    {{ form_end(form) }}
+
+
+{% endblock %}

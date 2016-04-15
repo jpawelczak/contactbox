@@ -1,0 +1,11 @@
+<div>
+    <p>Contact name: {{ contact.firstname }} {{ contact.lastname }}</p>
+    <p>Description: {{ contact.description }}</p>
+    <p>Street: {{ address.street }} {{ address.homeNumber }} {{ address.flatNumber }}</p>
+    <p>City: {{ address.city }}</p>
+    <p>{{ phoneNumber.phoneNumber }}</p>
+    <p><a href="{{ path('contactbox_contact_modifycontact', {'id' : contact.id}) }}">Edit contact</a>,
+        <a href="{{ path('contactbox_contact_deletecontact', {'id' : contact.id}) }}">Delete contact</a></p>
+    <p><a href="{{ path('contactbox_address_addaddress', {'id' : contact.id}) }}">Add address</a></p>
+
+</div>
