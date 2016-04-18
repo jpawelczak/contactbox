@@ -1,0 +1,4 @@
+contactbox:
+    resource: "@ContactboxBundle/Controller/"
+    type:     annotation
+    prefix:   /

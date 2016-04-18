@@ -82,23 +82,9 @@ class ContactController extends Controller
             throw $this->createNotFoundException('Contact not found');
         }
 
-        $addressFromContact = $contact->getAddress();
-
-        $address = $this->getDoctrine()
-            ->getRepository('ContactboxBundle:Address')
-            ->findOneBy(array('contact' => $id));
-
-        $phoneNumberFromContact = $contact->getPhoneNumber();
-
-        $phoneNumber = $this->getDoctrine()
-            ->getRepository('ContactboxBundle:Phonenumber')
-            ->findOneBy(array('contact' => $id));
-
-
-        var_dump($addressFromContact);
 
         //when template, return by array; else return new Response();
-        return ['contact' => $contact, 'address' => $address, 'phoneNumber' => $phoneNumber];
+        return ['contact' => $contact];
     }
 
     /**
