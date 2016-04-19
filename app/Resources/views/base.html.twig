@@ -9,16 +9,20 @@
 <body>
 {% block body %}
     {% block menu %}
-        <p>menu here</p>
+        <p>MENU:</p>
+        <p>
+            <a href="{{ path('contactbox_contact_showallcontacts') }}">All contacts</a> |
+            <a href="{{ path('fos_user_profile_show') }}">Profile</a> |
+            <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+        </p>
+        <br>
     {% endblock %}
-
     {% block content %}
 
 
 
 
     {% endblock %}
-
     {% block footer %}
         <p>footer here</p>
     {% endblock %}

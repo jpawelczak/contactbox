@@ -70,7 +70,7 @@ class ContactController extends Controller
     }
 
     /**
-     * @Route("/{id}")
+     * @Route("/{id}", requirements={"id"="\d+"})
      * @Template()
      * @Method("GET")
      */
@@ -153,12 +153,14 @@ class ContactController extends Controller
     {
         $allContacts = $this->getDoctrine()->getRepository('ContactboxBundle:Contact')->findAll();
 
-        return ["allContacts" => $allContacts];
+        $user = $this->getUser();
+
+        return ["allContacts" => $allContacts, "user" => $user];
     }
 
     public function formContactAction()
     {
-
+        //TODO: refactor - add 'contact form' to seperate Action
     }
 
 }

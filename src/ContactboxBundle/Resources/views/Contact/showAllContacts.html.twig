@@ -6,9 +6,9 @@
         <div>
             <p>#########</p>
             <p>Name: {{ contact.firstname }} {{ contact.lastname }}</p>
-            <p><a href="{{ path('contactbox_contact_modifycontact', {'id' : contact.id}) }}">Edit contact</a></p>
-            <p><a href="{{ path('contactbox_contact_deletecontact', {'id' : contact.id}) }}">Delete contact</a></p>
-            <p><a href="{{ path('contactbox_contact_showcontact', {'id' : contact.id}) }}">Details</a></p>
+            <p><a href="{{ path('contactbox_contact_modifycontact', {'id' : contact.id}) }}">Edit contact</a>,
+               <a href="{{ path('contactbox_contact_deletecontact', {'id' : contact.id}) }}">Delete contact</a>,
+               <a href="{{ path('contactbox_contact_showcontact', {'id' : contact.id}) }}">Details</a></p>
             <p>---------</p>
         </div>
     {% else %}
