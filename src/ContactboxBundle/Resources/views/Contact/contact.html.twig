@@ -1,12 +1,17 @@
-<div>
-    <p>Contact name: {{ contact.firstname }} {{ contact.lastname }}</p>
+<div class="alert">
+    <h4>Contact name: {{ contact.firstname }} {{ contact.lastname }}</h4>
     <p>Description: {{ contact.description }}</p>
     {% for address in contact.address %}
-    <p>Street: {{ address.street }} {{ address.homeNumber }} {{ address.flatNumber }}</p>
-    <p>City: {{ address.city }}</p>
+        <p>Street [{{ address.id }}]: {{ address.street }} {{ address.homeNumber }} {{ address.flatNumber }}</p>
+        <p>City: {{ address.city }}</p>
     {% endfor %}
+    {% for phonenumber in contact.phonenumber %}
+        <p>Phone number [{{ phonenumber.phoneType }}]: {{ phonenumber.phonenumber }}</p>
+    {% endfor %}
+    <br>
     <p><a href="{{ path('contactbox_contact_modifycontact', {'id' : contact.id}) }}">Edit contact</a>,
-        <a href="{{ path('contactbox_contact_deletecontact', {'id' : contact.id}) }}">Delete contact</a></p>
-    <p><a href="{{ path('contactbox_address_addaddress', {'id' : contact.id}) }}">Add address</a></p>
+        <a href="{{ path('contactbox_contact_deletecontact', {'id' : contact.id}) }}">Delete contact</a>,
+        <a href="{{ path('contactbox_address_addaddress', {'id' : contact.id}) }}">Add address</a>,
+        <a href="{{ path('contactbox_phonenumber_addphonenumber', {'id' : contact.id}) }}">Add phone number</a></p>
 
 </div>

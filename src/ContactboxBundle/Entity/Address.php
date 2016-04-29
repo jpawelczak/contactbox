@@ -25,6 +25,7 @@ class Address
      * @var string
      *
      * @ORM\Column(name="city", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $city;
 
@@ -32,6 +33,7 @@ class Address
      * @var string
      *
      * @ORM\Column(name="street", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $street;
 
@@ -51,6 +53,7 @@ class Address
 
     /**
      * @ORM\ManyToOne(targetEntity="Contact", inversedBy="address")
+     * @Assert\NotNull()
      */
     private $contact;
 

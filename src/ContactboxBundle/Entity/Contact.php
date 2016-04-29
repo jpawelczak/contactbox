@@ -25,6 +25,7 @@ class Contact
      * @var string
      *
      * @ORM\Column(name="firstname", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $firstname;
 
@@ -32,6 +33,7 @@ class Contact
      * @var string
      *
      * @ORM\Column(name="lastname", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $lastname;
 

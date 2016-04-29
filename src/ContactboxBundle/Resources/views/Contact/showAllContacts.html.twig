@@ -3,16 +3,14 @@
 {% block content %}
 
     {% for contact in allContacts %}
-        <div>
-            <p>#########</p>
-            <p>Name: {{ contact.firstname }} {{ contact.lastname }}</p>
+        <div class="alert">
+            <h4>Name: <a href="{{ path('contactbox_contact_showcontact', {'id' : contact.id}) }}"> {{ contact.firstname }} {{ contact.lastname }}</a></h4>
             <p><a href="{{ path('contactbox_contact_modifycontact', {'id' : contact.id}) }}">Edit contact</a>,
                <a href="{{ path('contactbox_contact_deletecontact', {'id' : contact.id}) }}">Delete contact</a>,
                <a href="{{ path('contactbox_contact_showcontact', {'id' : contact.id}) }}">Details</a></p>
-            <p>---------</p>
         </div>
     {% else %}
-        <p>No contacts to show</p>
+        <p class="alert alert-danger">No contacts to show</p>
     {% endfor %}
 
 {% endblock %}

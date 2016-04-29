@@ -3,6 +3,7 @@
 namespace ContactboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Phonenumber
@@ -25,6 +26,7 @@ class Phonenumber
      * @var integer
      *
      * @ORM\Column(name="phoneNumber", type="bigint")
+     * @Assert\NotBlank
      */
     private $phoneNumber;
 
@@ -32,11 +34,13 @@ class Phonenumber
      * @var string
      *
      * @ORM\Column(name="phoneType", type="string", length=60)
+     * @Assert\NotBlank
      */
     private $phoneType;
 
     /**
      * @ORM\ManyToOne(targetEntity="Contact", inversedBy="phoneNumber")
+     * @Assert\NotNull()
      */
     private $contact;
 

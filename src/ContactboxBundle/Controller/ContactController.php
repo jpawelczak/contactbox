@@ -82,7 +82,6 @@ class ContactController extends Controller
             throw $this->createNotFoundException('Contact not found');
         }
 
-
         //when template, return by array; else return new Response();
         return ['contact' => $contact];
     }
